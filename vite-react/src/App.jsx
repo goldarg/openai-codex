@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useState } from 'react'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const STATES = ['Pendiente', 'In Progress', 'Completada']
+
+export default function App() {
+  const [tasks, setTasks] = useState(() => {
+    const data = localStorage.getItem('tasks')
+    return data ? JSON.parse(data) : []
+  })
+  const [text, setText] = useState('')
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
+
+  function addTask(e) {
+    e.preventDefault()
+    if (!text.trim()) return
+    const newTask = {
+      id: Date.now(),
+      text: text.trim(),
+      state: 'Pendiente',
+    }
+    setTasks((t) => [...t, newTask])
+    setText('')
+  }
+
+  function updateTask(id, state) {
+    setTasks((ts) => ts.map((t) => (t.id === id ? { ...t, state } : t)))
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="container">
+      <h1>TODO List</h1>
+      <form onSubmit={addTask} className="add-form">
+        <input
+          placeholder="Nueva tarea"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <button>Añadir</button>
+      </form>
+      <ul className="task-list">
+        {tasks.map((task) => (
+          <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
+            <span>{task.text}</span>
+            <select
+              value={task.state}
+              onChange={(e) => updateTask(task.id, e.target.value)}
+            >
+              {STATES.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
-
-export default App
