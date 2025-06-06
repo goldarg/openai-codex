@@ -35,14 +35,28 @@
 }
 
 .task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 4px;
-  background-color: #f2f2f2;
   animation: fade-in 0.3s ease-out;
+}
+
+.task-card {
+  background-color: var(--secundario);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: #2A2A2A;
+}
+
+.task-card span {
+  color: #FFFFFF;
+  font-weight: 400;
 }
 
 .task.pendiente {
