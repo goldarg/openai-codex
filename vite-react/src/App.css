@@ -34,7 +34,7 @@
   margin: 0;
 }
 
-.task {
+.task-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,19 +43,25 @@
   border-radius: 4px;
   background-color: #f2f2f2;
   animation: fade-in 0.3s ease-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.task.pendiente {
+.task-card.pendiente {
   border-left: 4px solid orange;
 }
 
-.task.in-progress {
+.task-card.in-progress {
   border-left: 4px solid dodgerblue;
 }
 
-.task.completada {
+.task-card.completada {
   border-left: 4px solid seagreen;
+}
+
+.task-card.completed {
+  opacity: 0.6;
   text-decoration: line-through;
+  background-color: #181818;
 }
 
 @keyframes fade-in {
