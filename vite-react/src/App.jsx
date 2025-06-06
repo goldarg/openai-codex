@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import AppWrapper from './AppWrapper.jsx'
+import NewTaskForm from './NewTaskForm.jsx'
 import './App.css'
 
 const STATES = ['Pendiente', 'In Progress', 'Completada']
@@ -35,15 +36,12 @@ export default function App() {
     <AppWrapper>
       <div className="container">
         <h1>TODO List</h1>
-        <form onSubmit={addTask} className="add-form">
-          <input
-            placeholder="Nueva tarea"
-            value={text}
-          onChange={(e) => setText(e.target.value)}
+        <NewTaskForm
+          text={text}
+          onChange={setText}
+          onAdd={addTask}
         />
-        <button>Añadir</button>
-      </form>
-      <ul className="task-list">
+        <ul className="task-list">
         {tasks.map((task) => (
           <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
             <span>{task.text}</span>
