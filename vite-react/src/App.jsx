@@ -34,8 +34,8 @@ export default function App() {
   return (
     <AppWrapper>
       <div className="container">
-        <h1>TODO List</h1>
-        <form onSubmit={addTask} className="add-form">
+        <h1 className="app-title">TODO List</h1>
+        <form onSubmit={addTask} className="add-form new-task-container">
           <input
             placeholder="Nueva tarea"
             value={text}
@@ -45,7 +45,10 @@ export default function App() {
       </form>
       <ul className="task-list">
         {tasks.map((task) => (
-          <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
+          <li
+            key={task.id}
+            className={`task task-card ${task.state.toLowerCase().replace(' ', '-')}`}
+          >
             <span>{task.text}</span>
             <select
               value={task.state}

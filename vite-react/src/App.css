@@ -1,26 +1,26 @@
 .container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: var(--espaciado-medio);
   font-family: system-ui, sans-serif;
   color: #333;
 }
 
 .add-form {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: var(--espaciado-pequeno);
+  margin-bottom: var(--espaciado-medio);
 }
 
 .add-form input {
   flex: 1;
-  padding: 0.5rem;
+  padding: var(--espaciado-pequeno);
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
 .add-form button {
-  padding: 0.5rem 1rem;
+  padding: var(--espaciado-pequeno) var(--espaciado-medio);
   border-radius: 4px;
   background-color: #646cff;
   color: #fff;
@@ -38,8 +38,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
+  padding: var(--espaciado-pequeno);
+  margin-bottom: var(--espaciado-pequeno);
   border-radius: 4px;
   background-color: #f2f2f2;
   animation: fade-in 0.3s ease-out;
@@ -56,6 +56,22 @@
 .task.completada {
   border-left: 4px solid seagreen;
   text-decoration: line-through;
+}
+
+.app-title {
+  margin-bottom: var(--espaciado-grande);
+}
+
+.app-subtitle {
+  margin-bottom: var(--espaciado-medio);
+}
+
+.new-task-container {
+  margin-bottom: var(--espaciado-grande);
+}
+
+.task-card {
+  margin-bottom: var(--espaciado-medio);
 }
 
 @keyframes fade-in {
