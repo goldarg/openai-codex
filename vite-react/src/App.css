@@ -6,6 +6,29 @@
   color: var(--texto-principal);
 }
 
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 2rem;
+  }
+}
+
+.app-subtitle {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #CCCCCC;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .add-form {
   display: flex;
   gap: 0.5rem;
