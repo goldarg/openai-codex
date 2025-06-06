@@ -40,12 +40,29 @@ export default function App() {
     <AppWrapper>
       <div className="container">
         <h1>TODO List</h1>
+
+//         <form onSubmit={addTask} className="add-form">
+//           <input
+//             placeholder="Nueva tarea"
+//             value={text}
+//             onChange={(e) => setText(e.target.value)}
+//           />
+//           <button
+//             className="add-button"
+//             disabled={!text.trim()}
+//           >
+//             Añadir
+//           </button>
+//         </form>
+//       <ul className="task-list">
+
         <NewTaskForm
           text={text}
           onChange={setText}
           onAdd={addTask}
         />
         <ul className="task-list">
+
         {tasks.map((task) => (
           <TaskItem
             key={task.id}

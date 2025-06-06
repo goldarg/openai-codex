@@ -41,6 +41,13 @@
 
 }
 
+
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+
 .task-input:focus {
   background-color: #2A2A2A;
 }
@@ -50,10 +57,28 @@
   border-radius: 4px;
   background-color: var(--primario);
   color: var(--texto-principal);
+
   border: none;
+  border-radius: 0.5rem;
+  background-color: var(--primario);
+  color: #FFFFFF;
   cursor: pointer;
+
+  transition: background-color 0.2s, transform 0.1s;
+}
+.add-button:hover {
+  background-color: var(--hover-primario);
+}
+.add-button:active {
+  transform: scale(0.97);
+}
+.add-button:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+
   font-size: 1rem;
   font-weight: 500;
+
 }
 
 .task-list {

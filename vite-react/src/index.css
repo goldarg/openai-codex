@@ -15,9 +15,17 @@
   font-weight: 400;
 
 
-  color-scheme: dark;
+  --primario: #7e22ce;
+  --hover-primario: #9333ea;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+
+/*   color-scheme: dark;
   color: var(--texto-principal);
-  background-color: var(--bg-principal);
+  background-color: var(--bg-principal); */
+
 
 
   font-synthesis: none;
