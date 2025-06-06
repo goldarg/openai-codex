@@ -34,7 +34,8 @@ export default function App() {
   return (
     <AppWrapper>
       <div className="container">
-        <h1>TODO List</h1>
+        <h1 className="app-title">TODO List</h1>
+        <p className="app-subtitle">Añade y organiza tus tareas</p>
         <form onSubmit={addTask} className="add-form">
           <input
             placeholder="Nueva tarea"
