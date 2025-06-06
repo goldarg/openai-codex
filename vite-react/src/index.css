@@ -1,11 +1,17 @@
 :root {
+  --bg-principal: #0A0A0A;
+  --texto-principal: #FFFFFF;
+  --primario: #A63EDD;
+  --secundario: #242424;
+  --hover-primario: #C878FF;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: dark;
+  color: var(--texto-principal);
+  background-color: var(--bg-principal);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,11 +27,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--primario);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--hover-primario);
 }
 
 html,
@@ -40,6 +46,8 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
 }
 
 .app-wrapper {
@@ -49,6 +57,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   width: 100%;
+  background-color: var(--bg-principal);
 }
 
 h1 {
@@ -63,27 +72,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--primario);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--hover-primario);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
