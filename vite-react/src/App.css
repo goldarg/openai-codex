@@ -3,32 +3,67 @@
   margin: 0 auto;
   padding: 1rem;
   font-family: system-ui, sans-serif;
-  color: #333;
+  color: var(--texto-principal);
 }
 
 .add-form {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
-.add-form input {
+
+.task-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.task-input::placeholder {
+  color: #BBBBBB;
+
+/* .add-form input {
   flex: 1;
   padding: 0.5rem;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  font-size: 1rem;
+  border: 1px solid var(--primario);
+  background-color: var(--secundario);
+  color: var(--texto-principal); */
+
 }
+
 
 
 .add-button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
+
+.task-input:focus {
+  background-color: #2A2A2A;
+}
+
+.add-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: var(--primario);
+  color: var(--texto-principal);
+
   border: none;
   border-radius: 0.5rem;
   background-color: var(--primario);
   color: #FFFFFF;
   cursor: pointer;
+
   transition: background-color 0.2s, transform 0.1s;
 }
 .add-button:hover {
@@ -40,6 +75,10 @@
 .add-button:disabled {
   background-color: #555555;
   cursor: not-allowed;
+
+  font-size: 1rem;
+  font-weight: 500;
+
 }
 
 .task-list {
@@ -49,14 +88,40 @@
 }
 
 .task {
+  animation: fade-in 0.3s ease-out;
+}
+
+.task-card {
+  background-color: var(--secundario);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 0.75rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: #2A2A2A;
+}
+
+.task-card span {
+  color: #FFFFFF;
+  font-weight: 400;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   border-radius: 4px;
-  background-color: #f2f2f2;
+  background-color: var(--secundario);
+  color: var(--texto-principal);
   animation: fade-in 0.3s ease-out;
+  font-size: 1rem;
+}
+
+.task span {
+
 }
 
 .task.pendiente {
@@ -80,5 +145,11 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .add-form {
+    flex-direction: column;
   }
 }

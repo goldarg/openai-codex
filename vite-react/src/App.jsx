@@ -1,5 +1,10 @@
 import { useEffect, useState } from 'react'
 import AppWrapper from './AppWrapper.jsx'
+
+import NewTaskForm from './NewTaskForm.jsx'
+
+import TaskItem from './TaskItem.jsx'
+
 import './App.css'
 
 const STATES = ['Pendiente', 'In Progress', 'Completada']
@@ -35,34 +40,36 @@ export default function App() {
     <AppWrapper>
       <div className="container">
         <h1>TODO List</h1>
-        <form onSubmit={addTask} className="add-form">
-          <input
-            placeholder="Nueva tarea"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          />
-          <button
-            className="add-button"
-            disabled={!text.trim()}
-          >
-            Añadir
-          </button>
-        </form>
-      <ul className="task-list">
+
+//         <form onSubmit={addTask} className="add-form">
+//           <input
+//             placeholder="Nueva tarea"
+//             value={text}
+//             onChange={(e) => setText(e.target.value)}
+//           />
+//           <button
+//             className="add-button"
+//             disabled={!text.trim()}
+//           >
+//             Añadir
+//           </button>
+//         </form>
+//       <ul className="task-list">
+
+        <NewTaskForm
+          text={text}
+          onChange={setText}
+          onAdd={addTask}
+        />
+        <ul className="task-list">
+
         {tasks.map((task) => (
-          <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
-            <span>{task.text}</span>
-            <select
-              value={task.state}
-              onChange={(e) => updateTask(task.id, e.target.value)}
-            >
-              {STATES.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-          </li>
+          <TaskItem
+            key={task.id}
+            task={task}
+            states={STATES}
+            onChange={updateTask}
+          />
         ))}
       </ul>
       </div>
