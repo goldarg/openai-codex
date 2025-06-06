@@ -43,6 +43,8 @@
   border-radius: 4px;
   background-color: #f2f2f2;
   animation: fade-in 0.3s ease-out;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .task.pendiente {
