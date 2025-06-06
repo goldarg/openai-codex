@@ -39,10 +39,15 @@ export default function App() {
           <input
             placeholder="Nueva tarea"
             value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <button>Añadir</button>
-      </form>
+            onChange={(e) => setText(e.target.value)}
+          />
+          <button
+            className="add-button"
+            disabled={!text.trim()}
+          >
+            Añadir
+          </button>
+        </form>
       <ul className="task-list">
         {tasks.map((task) => (
           <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
