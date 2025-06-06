@@ -37,17 +37,19 @@ export default function App() {
         <h1>TODO List</h1>
         <form onSubmit={addTask} className="add-form">
           <input
+            className="task-input"
             placeholder="Nueva tarea"
             value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <button>Añadir</button>
-      </form>
-      <ul className="task-list">
-        {tasks.map((task) => (
-          <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
+            onChange={(e) => setText(e.target.value)}
+          />
+          <button className="add-button">Añadir</button>
+        </form>
+        <ul className="task-list">
+          {tasks.map((task) => (
+          <li key={task.id} className={`task-card task ${task.state.toLowerCase().replace(' ', '-')}`}>
             <span>{task.text}</span>
             <select
+              className="status-select"
               value={task.state}
               onChange={(e) => updateTask(task.id, e.target.value)}
             >

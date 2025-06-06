@@ -28,6 +28,35 @@
   cursor: pointer;
 }
 
+.add-button:hover {
+  background-color: var(--hover-primario);
+}
+
+.add-button:focus {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+.task-input:hover {
+  cursor: text;
+}
+
+.task-input:focus {
+  box-shadow: inset 0 0 0 2px var(--primario);
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.status-select:hover {
+  background-color: #2A2A2A;
+}
+
+.status-select:focus {
+  box-shadow: 0 0 0 2px var(--primario);
+}
+
 .task-list {
   list-style: none;
   padding: 0;
