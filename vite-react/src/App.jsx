@@ -48,6 +48,7 @@ export default function App() {
           <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
             <span>{task.text}</span>
             <select
+              className="status-select"
               value={task.state}
               onChange={(e) => updateTask(task.id, e.target.value)}
             >

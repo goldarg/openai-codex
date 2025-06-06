@@ -43,6 +43,7 @@
   border-radius: 4px;
   background-color: #f2f2f2;
   animation: fade-in 0.3s ease-out;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .task.pendiente {
@@ -56,6 +57,8 @@
 .task.completada {
   border-left: 4px solid seagreen;
   text-decoration: line-through;
+  background-color: #333;
+  color: #bfbfbf;
 }
 
 @keyframes fade-in {
@@ -67,4 +70,21 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.status-select {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-left: auto;
+}
+
+.status-select:hover {
+  background-color: #2A2A2A;
 }
