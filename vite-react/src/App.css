@@ -9,21 +9,43 @@
 .add-form {
   display: flex;
   gap: 0.5rem;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
-.add-form input {
+
+.task-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.task-input::placeholder {
+  color: #BBBBBB;
+
+/* .add-form input {
   flex: 1;
   padding: 0.5rem;
   border-radius: 4px;
   font-size: 1rem;
   border: 1px solid var(--primario);
   background-color: var(--secundario);
-  color: var(--texto-principal);
+  color: var(--texto-principal); */
 
 }
 
-.add-form button {
+.task-input:focus {
+  background-color: #2A2A2A;
+}
+
+.add-button {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   background-color: var(--primario);
@@ -98,5 +120,11 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .add-form {
+    flex-direction: column;
   }
 }
