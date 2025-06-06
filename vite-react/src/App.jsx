@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import AppWrapper from './AppWrapper.jsx'
 import './App.css'
 
 const STATES = ['Pendiente', 'In Progress', 'Completada']
@@ -31,12 +32,13 @@ export default function App() {
   }
 
   return (
-    <div className="container">
-      <h1>TODO List</h1>
-      <form onSubmit={addTask} className="add-form">
-        <input
-          placeholder="Nueva tarea"
-          value={text}
+    <AppWrapper>
+      <div className="container">
+        <h1>TODO List</h1>
+        <form onSubmit={addTask} className="add-form">
+          <input
+            placeholder="Nueva tarea"
+            value={text}
           onChange={(e) => setText(e.target.value)}
         />
         <button>Añadir</button>
@@ -58,6 +60,7 @@ export default function App() {
           </li>
         ))}
       </ul>
-    </div>
+      </div>
+    </AppWrapper>
   )
 }
