@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { FiTrash2, FiCheckCircle } from 'react-icons/fi'
 import AppWrapper from './AppWrapper.jsx'
 import './App.css'
 
@@ -31,6 +32,14 @@ export default function App() {
     setTasks((ts) => ts.map((t) => (t.id === id ? { ...t, state } : t)))
   }
 
+  function deleteTask(id) {
+    setTasks((ts) => ts.filter((t) => t.id !== id))
+  }
+
+  function completeTask(id) {
+    updateTask(id, 'Completada')
+  }
+
   return (
     <AppWrapper>
       <div className="container">
@@ -45,7 +54,10 @@ export default function App() {
       </form>
       <ul className="task-list">
         {tasks.map((task) => (
-          <li key={task.id} className={`task ${task.state.toLowerCase().replace(' ', '-')}`}>
+          <li
+            key={task.id}
+            className={`task ${task.state.toLowerCase().replace(' ', '-')}`}
+          >
             <span>{task.text}</span>
             <select
               value={task.state}
@@ -57,6 +69,20 @@ export default function App() {
                 </option>
               ))}
             </select>
+            <button
+              className="complete-button"
+              onClick={() => completeTask(task.id)}
+              title="Completar"
+            >
+              <FiCheckCircle size={18} />
+            </button>
+            <button
+              className="delete-button"
+              onClick={() => deleteTask(task.id)}
+              title="Eliminar"
+            >
+              <FiTrash2 size={18} />
+            </button>
           </li>
         ))}
       </ul>

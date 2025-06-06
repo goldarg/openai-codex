@@ -58,6 +58,31 @@
   text-decoration: line-through;
 }
 
+.delete-button,
+.complete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-left: 0.25rem;
+}
+
+.delete-button {
+  color: #ff4e4e;
+}
+
+.delete-button:hover {
+  color: #ff1e1e;
+}
+
+.complete-button {
+  color: seagreen;
+}
+
+.complete-button:hover {
+  color: #2e8b57;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
