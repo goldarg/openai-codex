@@ -16,9 +16,11 @@
   flex: 1;
   padding: 0.5rem;
   border-radius: 4px;
+  font-size: 1rem;
   border: 1px solid var(--primario);
   background-color: var(--secundario);
   color: var(--texto-principal);
+
 }
 
 .add-form button {
@@ -28,6 +30,8 @@
   color: var(--texto-principal);
   border: none;
   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .task-list {
@@ -46,6 +50,11 @@
   background-color: var(--secundario);
   color: var(--texto-principal);
   animation: fade-in 0.3s ease-out;
+  font-size: 1rem;
+}
+
+.task span {
+  font-size: 1rem;
 }
 
 .task.pendiente {

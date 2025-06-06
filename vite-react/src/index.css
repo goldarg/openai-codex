@@ -1,4 +1,8 @@
+
 :root {
+
+  --texto-principal: #213547;
+  font-family: 'Poppins', sans-serif;
   --bg-principal: #0A0A0A;
   --texto-principal: #FFFFFF;
   --primario: #A63EDD;
@@ -6,6 +10,7 @@
   --hover-primario: #C878FF;
 
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
@@ -46,7 +51,11 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   background-color: var(--bg-principal);
+
   color: var(--texto-principal);
 }
 
@@ -61,8 +70,19 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5rem;
   line-height: 1.1;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.25rem;
 }
 
 button {
@@ -82,5 +102,25 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }
 
